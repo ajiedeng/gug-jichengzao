@@ -1,0 +1,134 @@
+@import './base.less';
+
+// main page
+.bgColor {
+  &.bgColorOff {
+  }
+}
+.main {
+  position: relative;
+  text-align: center;
+  .mainImg {
+    img {
+      width: 5.44rem;
+      height: 5.44rem;
+    }
+  }
+  padding-bottom: 1.8rem;
+}
+.tips {
+  text-align: center;
+  .px2px(font-size,28px);
+  padding-top: 0.4267rem;
+  padding-bottom: 0.64rem;
+  &.closeTips {
+    padding-top: 1rem;
+  }
+}
+.flex {
+  display: flex;
+  .flexChild {
+    text-align: center;
+    flex: 1;
+  }
+}
+.box {
+  display: inline-block;
+  position: relative;
+  img {
+    width: 2.24rem;
+    height: 2.24rem;
+  }
+  .label {
+    .px2px(font-size,28px);
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+  }
+}
+.subTips {
+  padding-top: 0.2667rem;
+}
+.jump {
+  position: fixed;
+  top: 1.3rem;
+  right: 0;
+  padding: 0.3733rem 0.2133rem;
+  .px2px(font-size,28px);
+  padding-left: 0.4267rem;
+  background: rgba(229, 63, 91, 0.1);
+  border-radius: 1.2267rem 0 0 1.2267rem;
+}
+.bottom {
+  background: @gray-2;
+  padding-top: 0.8rem;
+}
+
+.content {
+  text-align: center;
+  .list {
+    .item {
+      position: relative;
+      padding: 0.3733rem;
+      border-bottom: @border-width-base @border-style-base @gray-5;
+      &:last-child {
+        border-bottom: none;
+      }
+      .selected {
+        position: absolute;
+        width: 0.5333rem;
+        height: 0.4rem;
+        top: 50%;
+        transform: translate(200%, -50%);
+      }
+    }
+  }
+  &.panelBox {
+    height: 3.8667rem;
+  }
+  .countDown {
+    padding-top: 0.5rem;
+    div {
+      position: relative;
+      img {
+        width: 2.1333rem;
+        height: 2.1333rem;
+      }
+      .count {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .number {
+          .px2px(font-size,72px);
+        }
+        .unit {
+          .px2px(font-size,32px);
+          margin-top: -0.2rem;
+        }
+      }
+    }
+    .remain {
+      padding-top: 0.2667rem;
+    }
+  }
+}
+
+// components hook css
+.fontColor div span {
+  color: @black;
+}
+.PopPanel {
+  .px2px(font-size,32px);
+  .panelBottom {
+    border-top: 0.2133rem @border-style-base @gray-2;
+    div {
+      padding: 0.4rem;
+      border-right: @border-width-min @border-style-base @gray-5;
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}

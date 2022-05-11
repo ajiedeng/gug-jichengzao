@@ -1,0 +1,225 @@
+@import './base.less';
+
+// oven page
+@font-size-six: 75;
+
+.px2px(@name, @px) {
+    @{name}: round(@px / 2) * 1px;
+
+    [data-dpr="2"] & {
+        @{name}: @px * 1px;
+    }
+
+    // for mx3
+    [data-dpr="2.5"] & {
+        @{name}: round(@px * 2.5 / 2) * 1px;
+    }
+
+    // for С��note
+    [data-dpr="2.75"] & {
+        @{name}: round(@px * 2.75 / 2) * 1px;
+    }
+
+    [data-dpr="3"] & {
+        @{name}: round(@px / 2 * 3.3333333) * 1px
+    }
+
+    // for ����note4
+    [data-dpr="4"] & {
+        @{name}: @px * 2px;
+    }
+}
+.workPage{
+    background: white;
+    height: 100%;
+    // overflow: hidden;
+}
+.modeSet {
+    padding: 32rem/@font-size-six 0 16rem/@font-size-six 30rem/@font-size-six;
+    color: @disabled-color;
+    .px2px(font-size, 28px);
+    background: #F3F3F3;
+}
+
+.modelist {
+    background: @white;
+    padding: 32rem/@font-size-six 0;
+    text-align: center;
+
+    li {
+        width: 160rem/@font-size-six;
+        height: 80rem/@font-size-six;
+        line-height: 80rem/@font-size-six;
+        border-radius: 10rem/@font-size-six;
+        background: @gray-2;
+        display: inline-block;
+        text-align: center;
+        margin: 0 8rem/@font-size-six;
+        color: @disabled-color;
+        .px2px(font-size, 28px);
+    }
+
+    li.selected {
+        color: @white;
+        background: @theme-color;
+    }
+}
+
+.modelist li:nth-child(1),
+.modelist li:nth-child(2),
+.modelist li:nth-child(3),
+.modelist li:nth-child(4) {
+    margin-bottom: 16rem/@font-size-six;
+}
+
+.tempSet {
+    height: 240rem/@font-size-six;
+    width: 100%;
+    background: @white;
+    position: relative;
+    .keepTemp{
+      line-height: 240rem/@font-size-six;
+      text-align: center;
+      background: @white;
+      .px2px(font-size, 48px);
+    }
+    p {
+        text-align: center;
+        .px2px(font-size, 48px);
+        color: #000;
+        position: absolute;
+        width: 100%;
+        top: 28rem/@font-size-six;
+        text-align: center;
+    }
+
+    .btn {
+        width: 64rem/@font-size-six;
+        height: 64rem/@font-size-six;
+        border-radius: 32rem/@font-size-six;
+        background: #EDEDED;
+        position: absolute;
+        top: 110rem/@font-size-six;
+    }
+
+    .btn.plus {
+        left: 32rem/@font-size-six;
+    }
+
+    .btn.minus {
+        right: 32rem/@font-size-six;
+    }
+
+    .minus::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 26rem/@font-size-six;
+        margin-left: -2rem/@font-size-six;
+        margin-top: -13rem/@font-size-six;
+        border-left: 4rem/@font-size-six solid;
+    }
+
+    .plus::after,
+    .minus::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 26rem/@font-size-six;
+        margin-left: -13rem/@font-size-six;
+        margin-top: -2rem/@font-size-six;
+        border-top: 4rem/@font-size-six solid;
+    }
+}
+.disable{
+    opacity: 0.2!important;
+}
+.selectTime {
+    padding-bottom: 100rem/@font-size-six;
+    p{
+        height: 100%;
+        line-height:240rem/@font-size-six;
+        text-align: center;
+        background: @white;
+        .px2px(font-size, 48px);
+    }
+}
+.bottomBtn{
+    z-index: 1;
+    position: relative;
+}
+.bottomBtn >div:nth-child(1){
+    background: #f3f3f3;
+}
+
+.bottomBtn div div {
+    width: 680rem/@font-size-six;
+    height: 96rem/@font-size-six;
+    line-height: 96rem/@font-size-six;
+    border-radius: 48rem/@font-size-six;
+    margin: 0 auto 36rem/@font-size-six;
+}
+
+.workState {
+    width: 484rem/@font-size-six;
+    height: 484rem/@font-size-six;
+    margin: 0 auto;
+    position: relative;
+    // animation: rotating 4s linear infinite
+    .stateBg{
+        background: url('../images/oven.svg') no-repeat center center;
+        background-size: 100%;
+        width: 100%;
+        height: 100%;
+    }
+    .stateInfo{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        .px2px(font-size,32px);
+        text-align: center;
+        p{
+            padding: 10rem/@font-size-six 0 22rem/@font-size-six;
+            .px2px(font-size,120px);
+            span{
+              .px2px(font-size,76px);
+            }
+        }
+    }
+}
+.stateText{
+   text-align: center;
+   .px2px(font-size,36px);
+   position: relative;
+   top:88px;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+.workPage .bottomBtn >div:nth-child(1){
+    background: transparent;
+}
+.btnbottom{
+    text-align: center;
+    padding-bottom: 36rem/@font-size-six;
+    a{
+        padding: 22rem/@font-size-six 118rem/@font-size-six;
+        background: @theme-color;
+        color:@white;
+        .px2px(font-size, 36px);
+        border-radius: 48rem/@font-size-six;
+        display: inline-block;
+        margin:0 12rem/@font-size-six;
+    }
+}
